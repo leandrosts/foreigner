@@ -38,7 +38,7 @@ module Foreigner
   end
 end
 
-[:PostgreSQLAdapter, :JdbcAdapter].each do |adapter|
+[:PostgreSQLAdapter, :PostGISAdapter, :JdbcAdapter].each do |adapter|
   begin
     ActiveRecord::ConnectionAdapters.const_get(adapter).class_eval do
       include Foreigner::ConnectionAdapters::PostgreSQLAdapter
